@@ -1,12 +1,17 @@
 USE [ASDF-Palace]
 GO
 
---ROOM USES PAYMENTS
+--30 ROOM USES PAYMENTS
 INSERT INTO [dbo].[UseService]
            ([nfc_id],[service_id],[payment_id])
      VALUES
 		   (1,5,1),
-		   (3,5,2),
+		   (3,5,2)
+
+INSERT INTO [dbo].[UseService]
+([nfc_id],[service_id],[payment_id])
+     VALUES
+		   
 		   (4,5,3),
 		   (5,5,4),
 		   (6,5,5),
@@ -15,6 +20,7 @@ INSERT INTO [dbo].[UseService]
 		   (9,5,8),
 		   (11,5,9),
 		   (12,5,10),
+
 		   (13,5,11),
 		   (14,5,12),
 		   (15,5,13),
@@ -25,6 +31,7 @@ INSERT INTO [dbo].[UseService]
 		   (21,5,18),
 		   (23,5,19),
 		   (24,5,20),
+
 		   (25,5,21),
 		   (26,5,22),
 		   (27,5,23),
@@ -37,7 +44,7 @@ INSERT INTO [dbo].[UseService]
 		   (34,5,30)
 GO
 
---OTHER SERVICES (GYM=4,SAUNA=6,MEETING ROOM=7)USES PAYMENTS
+--50 OTHER SERVICES (GYM=4,SAUNA=6,MEETING ROOM=7)USES PAYMENTS
 INSERT INTO [dbo].[UseService]
            ([nfc_id],[service_id],[payment_id])
      VALUES
@@ -49,7 +56,13 @@ INSERT INTO [dbo].[UseService]
 		   (23,7,50),
 		   (24,7,56),
 		   (25,7,57),
-
+		   (24,7,68),
+		   (25,7,69),
+		   (32,7,70),
+		   (24,7,73),
+		   (25,7,76),
+		   (21,7,78),
+		   
 		   (11,4,31),
 		   (12,4,32),
 		   (13,4,33),
@@ -60,6 +73,15 @@ INSERT INTO [dbo].[UseService]
 		   (26,4,51),
 		   (27,4,52),
 		   (28,4,53),
+		   (26,4,58),
+		   (27,4,59),
+		   (28,4,60),
+		   (11,4,61),
+		   (12,4,62),
+		   (11,4,63),
+		   (24,4,71),
+		   (25,4,74),
+		   (30,4,79),
 
 		   (21,6,35),
 		   (23,6,36),
@@ -69,6 +91,14 @@ INSERT INTO [dbo].[UseService]
 		   (27,6,46),
 		   (28,6,47),
 		   (29,6,54),
-		   (30,6,55)
+		   (30,6,55),
+		   (12,6,64),
+		   (13,6,65),
+		   (24,6,66),
+		   (25,6,67),
+		   (24,6,72),
+		   (25,6,75),
+		   (21,6,77),
+		   (30,6,80)
 GO
 

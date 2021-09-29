@@ -1,6 +1,7 @@
 USE [ASDF-Palace]
 GO
 
+--40 clients
 INSERT INTO [dbo].[Clients]
            ([first_name]
            ,[last_name]
@@ -54,6 +55,7 @@ INSERT INTO [dbo].[Clients]
 		   ('Ben','Teller','1959-6-11','ак771199','Id Card','PO IONA')
 GO
 
+--49 emails(some of them have two)
 INSERT INTO [dbo].[Emails]
            ([nfc_id]
            ,[email])
@@ -110,6 +112,7 @@ INSERT INTO [dbo].[Emails]
 		   (40,'email40@hotmail.com')
 GO
 
+--49 phones(some of them have two)
 INSERT INTO [dbo].[Phones]
            ([nfc_id]
            ,[phone])

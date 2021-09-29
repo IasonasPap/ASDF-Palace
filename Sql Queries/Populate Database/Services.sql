@@ -1,6 +1,7 @@
 USE [ASDF-Palace]
 GO
 
+--3 no subscription needed Spaces
 INSERT INTO [dbo].[Services]
            ([title])
      VALUES
@@ -10,6 +11,7 @@ INSERT INTO [dbo].[Services]
 		   
 		   ('Hair Salon');
 
+--4 subscription needed Spaces
 INSERT INTO [dbo].[Services]
            ([title]
            ,[requires_registration])

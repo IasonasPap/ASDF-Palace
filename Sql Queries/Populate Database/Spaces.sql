@@ -1,6 +1,18 @@
 USE [ASDF-Palace]
 GO
 
+/*
+400 rooms
+5 elevators
+5*4 = 20 Corridors
+6 bars
+4 restaurants
+10 meeting rooms
+4 gyms
+10 saunas
+1 hair salon
+= 460 Spaces
+*/
 INSERT INTO [dbo].[Spaces]
            ([title]
            ,[beds]
@@ -466,7 +478,7 @@ INSERT INTO [dbo].[Spaces]
 		   ('Restaurant2',0,'009'),
 		   ('Restaurant3',0,'010'),
 		   ('Restaurant4',0,'011'),
-
+		   
 		   ('Meeting Room1',0,'012'),
 		   ('Meeting Room2',0,'013'),
 		   ('Meeting Room3',0,'014'),

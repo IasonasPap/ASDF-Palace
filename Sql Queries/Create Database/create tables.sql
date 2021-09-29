@@ -9,7 +9,7 @@ create table Clients (
 	identification_number varchar(15),
 	identification_type varchar(8),
 	identification_issue_authority varchar(30),
-	check (identification_type in ('Passport','Id card','Ταυτότητα','Διαβατήριο'))
+	check (identification_type in ('Passport','Id card'))
 )
 
 create table Services (
@@ -63,17 +63,20 @@ create table HasAccess (
 )
 
 create table Payments (
-	id int identity(1,1) primary key,
+	id int identity(1,1) unique,
+	nfc_id int references Clients(nfc_id) on delete cascade,
 	description varchar(40),
 	cost int,
-	payment_time datetime default(GETDATE())
+	payment_time datetime default(GETDATE()),
+	primary key(id,nfc_id)
 )
 
 create table UseService (
-	nfc_id int references Clients(nfc_id) on delete cascade,
-	service_id int references Services(id) on delete set null,
-	payment_id int references Payments(id) on delete cascade,
-	primary key (payment_id)
+	nfc_id int references Clients(nfc_id),
+	service_id int references Services(id) on delete cascade,
+	payment_id int unique,
+	primary key (nfc_id,payment_id),
+	foreign key(payment_id,nfc_id) references Payments(id,nfc_id) on delete cascade
 )
 
 create table ServiceInSpace (
@@ -82,6 +85,18 @@ create table ServiceInSpace (
 	primary key (space_id)
 )
 
+-------------------TABLE ONLY FOR POPULATING PURPOSES---------------
+/*
+The triggers behave differently depending on if we are populating the database in development stage
+or the database is in it's normal use
+*/
+create table Populate (
+	populate_db bit default(0)
+)
+
+INSERT INTO Populate(populate_db) values(1);
+
+/*
 drop table Emails
 drop table Phones
 drop table Visits
@@ -93,3 +108,6 @@ drop table Payments
 drop table Clients
 drop table Services
 drop table Spaces
+
+drop table Populate
+*/
